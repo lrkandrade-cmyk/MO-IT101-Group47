@@ -6,11 +6,24 @@ Date Added: 12/03/2026
 
 Members and Contributions:
 
-Kean Andrade – Implemented the login system, menu navigation, and CSV file reading.
+Kean Andrade-Base Program Structure
 
-Jyvs Kenth Aycardo – Assisted with payroll computation and program testing.
+Developed the initial version of the payroll system including:
+* Basic login authentication
+* Initial menu system
+* Method for reading employee data from employee.csv
+* Basic payroll computation using attendance records
+* Implementation of file reading using BufferedReader
+* Initial calculation of hours worked and gross salary
+* Basic console output for employee payroll information
 
-Kurt Gabriel Pagaduan – Helped organize project files and documentation.
+Jyvs Kenth Aycardo-Payroll System Enhancements
+Expanded and improved the base system by implementing:
+* Authentication and Role Separation
+* Employee Payroll Processing
+* Attendance Processing
+* CSV Handling Improvements
+* Payroll Computation
 
 Program Details
 
@@ -22,30 +35,68 @@ The user logs into the system using a username and password.
 
 After logging in, a menu is displayed with the following options:
 
-View Employees
+If username is: employee
+Display options:
+1. ﻿﻿﻿Enter your employee number
+2. ﻿﻿﻿Exit the program
 
-Compute Payroll
+Enter your employee number
+   If correct, display the details:
+* ﻿﻿﻿Employee Number:
+* ﻿﻿﻿Employee Name:
+* ﻿﻿﻿Birthday:
 
-Exit
+If the employee number does not exist, display:
+a. Employee number does not exist.
 
-When the user selects View Employees, the system reads the employee data from employee.csv and displays the employee ID and name.
+2. Exit the program
+Terminate the program.
 
-When the user selects Compute Payroll, the system reads attendance data from attendance.csv.
+If username is: payroll_staff
+Display options:
+1. Process Payroll
+2. Exit Program
 
-The program calculates the hours worked by comparing the login and logout times using Java's LocalTime and Duration classes.
+Process Payroll 
+Display sub-options:
+1. ﻿﻿﻿One employee
+2. ﻿﻿﻿All employees
+3. ﻿﻿﻿Exit the program
 
-The salary is computed using the formula:
+1. One employee
+a.Enter the employee number.
+If the employee number is incorrect, display:
+Employee number does not exist.
+If correct, display employee details.
+b. Exit the program
 
-Salary = Hours Worked × Hourly Rate
+2. All employees
+Follows same format as One employee but this time for all employees
 
-The system then displays the employee ID, employee name, hours worked, and gross pay.
+3. Exit Program
 
 Example Output:
+Employee Number:10001
+First Name: Manuel III
+Last Name: Garcia
+Birthday: 10/11/1983
 
-Employee ID: 10034
-Employee Name: Beatriz Santos
-Hours Worked: 7.72
-Gross Pay: ₱1157.50
+Month: June
+Cutoff Date: June 1-15
+Total Hours Worked: 74.83333333333333
+Gross Salary: 40088.965000000004
+Net Salary: 40088.965000000004
+
+Cutoff Date: June 16 - 30
+Total Hours Worked: 76.81666666666669
+Gross Salary: 41151.456500000015
+SSS: 1125.0
+PhilHealth: 900.0
+Pag-Ibig: 100.0
+Tax: 34567.62645000001
+Total Deductions: 2125.0
+Net Salary: 79115.42150000003
+
 Project Plan Link
 
 Project Plan Document:
