@@ -101,3 +101,105 @@ Project Plan Link
 
 Project Plan Document:
 https://docs.google.com/spreadsheets/d/1g04PKozvkaz77Ghqhjd6WK6bXPx7r2daCM_ZHe1qN5k/edit?usp=sharing
+
+## Quality Assurance (QA) Test Cases
+
+These test cases were created to verify that the Payroll System functions correctly under different scenarios, including valid inputs, invalid inputs, and edge cases.
+
+---
+
+### 1. Login System
+
+| Test Case                 | Input                                        | Expected Output                                         |
+| ------------------------- | -------------------------------------------- | ------------------------------------------------------- |
+| Valid payroll staff login | Username: `payroll_staff`, Password: `12345` | Displays payroll menu (Process Payroll / Exit)          |
+| Valid employee login      | Username: `employee`, Password: `12345`      | Displays employee menu (Enter Employee Number / Exit)   |
+| Invalid username          | Username: `wrong`, Password: `12345`         | Displays "Incorrect username and/or password" and exits |
+| Invalid password          | Username: `payroll_staff`, Password: `wrong` | Displays "Incorrect username and/or password" and exits |
+
+---
+
+### 2. Payroll Staff Menu
+
+| Test Case              | Input       | Expected Output                                                |
+| ---------------------- | ----------- | -------------------------------------------------------------- |
+| Select Process Payroll | Choice: `1` | Displays payroll options (One Employee / All Employees / Exit) |
+| Exit program           | Choice: `2` | Program terminates                                             |
+
+---
+
+### 3. Payroll Options
+
+| Test Case            | Input       | Expected Output                            |
+| -------------------- | ----------- | ------------------------------------------ |
+| One Employee option  | Choice: `1` | Prompts "Enter Employee Number"            |
+| All Employees option | Choice: `2` | Displays payroll details for all employees |
+| Exit option          | Choice: `3` | Program terminates                         |
+
+---
+
+### 4. Payroll – One Employee
+
+| Test Case               | Input         | Expected Output                              |
+| ----------------------- | ------------- | -------------------------------------------- |
+| Valid employee number   | e.g., `10001` | Displays employee info + payroll computation |
+| Invalid employee number | e.g., `99999` | Displays "Employee number does not exist"    |
+
+---
+
+### 5. Payroll – All Employees
+
+| Test Case             | Input       | Expected Output                                            |
+| --------------------- | ----------- | ---------------------------------------------------------- |
+| Process all employees | Choice: `2` | Displays payroll details for each employee in the CSV file |
+
+---
+
+### 6. Employee Menu
+
+| Test Case               | Input                       | Expected Output                               |
+| ----------------------- | --------------------------- | --------------------------------------------- |
+| View employee details   | Choice: `1`, Enter valid ID | Displays employee number, name, and birthdate |
+| Invalid employee number | Enter `99999`               | Displays "Employee Number does not exist"     |
+| Exit program            | Choice: `2`                 | Program terminates                            |
+
+---
+
+### 7. Attendance & Time Handling
+
+| Test Case                      | Scenario                  | Expected Output     |
+| ------------------------------ | ------------------------- | ------------------- |
+| Early login                    | Before 8:00 AM            | Adjusted to 8:00 AM |
+| Late login within grace period | 8:01–8:10 AM              | Treated as 8:00 AM  |
+| Late logout                    | After 5:00 PM             | Adjusted to 5:00 PM |
+| Invalid time                   | Logout earlier than login | Entry is ignored    |
+
+---
+
+### 8. Payroll Computation
+
+| Test Case                | Scenario                | Expected Output      |
+| ------------------------ | ----------------------- | -------------------- |
+| Gross salary calculation | Hours × hourly rate     | Correct gross salary |
+| SSS deduction            | Based on salary range   | Correct SSS value    |
+| PhilHealth deduction     | 3% (min 300, max 1800)  | Correct contribution |
+| Pag-IBIG deduction       | 1% or 2% (max 100)      | Correct contribution |
+| Tax calculation          | Based on salary bracket | Correct tax value    |
+| Net salary               | Gross − deductions      | Correct net salary   |
+
+---
+
+### 9. File Handling
+
+| Test Case              | Scenario             | Expected Output                           |
+| ---------------------- | -------------------- | ----------------------------------------- |
+| Missing employee.csv   | File not found       | Displays "Error reading employee file"    |
+| Missing attendance.csv | File not found       | Displays "Error reading attendance file." |
+| Correct file format    | Proper CSV structure | System runs successfully                  |
+
+---
+
+## Summary
+
+All major system components login, menu navigation, employee lookup, payroll processing, and file handling  were tested and verified to function correctly.
+
