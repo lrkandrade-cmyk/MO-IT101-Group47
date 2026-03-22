@@ -184,3 +184,10 @@ These test cases were created to verify that the Payroll System functions correc
 ## Summary
 
 All major system components login, menu navigation, employee lookup, payroll processing, and file handling were tested and verified to function correctly.
+
+## Code Improvements Based on Feedback
+- Improved modularity (added helper methods)
+- Reduced repeated code
+- Improved variable naming
+- Added better comments for clarity
+- Fixed payroll computation logic
